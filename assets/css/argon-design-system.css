@@ -24318,5 +24318,8 @@ pre>code.highlight {
   height: 3px;
   bottom: 0;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 /*# sourceMappingURL=kit-free.css.map */
