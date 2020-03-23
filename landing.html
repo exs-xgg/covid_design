@@ -209,36 +209,9 @@ Coded by www.creative-tim.com
         </svg>
       </div>
     </div>
-    <div class="section features-6">
+    <div class="section features-6 col-0">
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <div class="info info-horizontal info-hover-primary">
-              <div class="description pl-4">
-                <h5 class="title">For Developers</h5>
-                <p>The time is now for it to be okay to be great. People in this world shun people for being great. For being a bright color. For standing out. But the time is now.</p>
-                <a href="#" class="text-info">Learn more</a>
-              </div>
-            </div>
-            <div class="info info-horizontal info-hover-primary mt-5">
-              <div class="description pl-4">
-                <h5 class="title">For Designers</h5>
-                <p>There’s nothing I really wanted to do in life that I wasn’t able to get good at. That’s my skill. I’m not really specifically talented at anything except for the ability to learn.</p>
-                <a href="#" class="text-info">Learn more</a>
-              </div>
-            </div>
-            <div class="info info-horizontal info-hover-primary mt-5">
-              <div class="description pl-4">
-                <h5 class="title">For Beginners</h5>
-                <p>That’s what I do. That’s what I’m here for. Don’t be afraid to be wrong because you can’t learn anything from a compliment. If everything I did failed - which it doesn't.</p>
-                <a href="#" class="text-info">Learn more</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 col-10 mx-md-auto">
-            <img class="ml-lg-5" src="assets/img/ill/ill.png" width="100%">
-          </div>
-        </div>
+        covid info here
       </div>
     </div>
     <div class="section features-1" id="assess">
@@ -392,27 +365,42 @@ Coded by www.creative-tim.com
                   <div class="tab-pane fade" id="travelhistab" role="tabpanel" aria-labelledby="travelhis">
                     <div class="">
                       <div class="">
-                        <div class="alert alert-info"><h3>San Ka Galing aber?</h3></div>
-                        <h5 class="font-italic">*Alam mo nang may outbreak, lumalabas kapa?</h5>
+                        <div class="alert alert-info"><h3>Travel History</h3></div>
+                        <h5 class="font-italic">Pakisagutan ang mga sumusunod ng tama upang mabigyan ng nararapat na pangangalaga ang mga tunay na nangangailangan.</h5>
                         <hr>
                       </div>
                       <form role="form">
                         <div class="form-group">
+                          <div class="custom-control custom-checkbox mb-3">
+                            <input class="custom-control-input" id="outTar" type="checkbox">
+                            <label class="custom-control-label" for="outTar">
+                              <span><b>Do you have a History of Travel outside Tarlac? </b>/<i> May pagkakataon bang ikaw ay lumabas ng Tarlac?</i></span>
+                            </label>
+                          </div>
+
+                          <!-- SHOULD BE WRAPPED IN A DISPLAY BLOCK IF CONDITION ABOVE IS TRUE -->
+                          <span id="travelbar">
+                          <div class="mb-3">
+                            <h4 class="display-4">Follow-up questions</h4>
+                          </div>
                           <div class="input-group input-group-alternative mb-3">
                             <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                              <span class="input-group-text"><i class="ni ni-briefcase-24"></i></span>
                             </div>
-                            <input class="form-control" placeholder="Travel His" type="text">
+                            <input class="form-control" placeholder="SABIHIN MO...SAAN!" type="text">
                           </div>
-                        </div>
-                        <div class="form-group">
                           <div class="input-group input-group-alternative mb-3">
                             <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                              <span class="input-group-text"><i class="ni ni-briefcase-24"></i></span>
                             </div>
-                            <input class="form-control" placeholder="Email" type="email">
+                            <input class="form-control" placeholder="Purpose of Travel" type="text">
                           </div>
+                        </span>
+                          <!-- END WRAPPER -->
+
+
                         </div>
+                        
                         <div class="text-center">
                           <a href="#assess" class="btn btn-success mt-4" onclick="goTo('travel.social')">Next</a>
                         </div>
@@ -549,7 +537,23 @@ Coded by www.creative-tim.com
   <!--  Google Maps Plugin    -->
   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> -->
   <script src="assets/js/argon-design-system.min.js?v=1.2.0" type="text/javascript"></script>
-  
+  <script>
+    var form = $('#travelcond'),
+checkbox = $('#outTar'),
+chShipBlock = $('#travelbar');
+
+chShipBlock.hide();
+
+checkbox.on('click', function() {
+   if($(this).is(':checked')) {
+      chShipBlock.show();
+      chShipBlock.find('input').attr('required', true);
+   } else {
+      chShipBlock.hide();
+      chShipBlock.find('input').attr('required', false);
+   }
+});
+  </script>
 </body>
 
 </html>
