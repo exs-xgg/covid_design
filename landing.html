@@ -231,7 +231,7 @@ Coded by www.creative-tim.com
                 <div class="tab-content" id="myTabContent">
                   <div class="tab-pane fade active show" id="medhistab" role="tabpanel" aria-labelledby="medhis">
                     <div class="">
-                      <div class="alert alert-info"><h3>Have you had any past medical conditions listed below?</h3></div>
+                      <div class="alert alert-default"><h3 class="display-3 text-white">Have you had any past medical conditions listed below?</h3></div>
                       <h5 class="font-italic">*Nakaranas or nakararanas ka ba ng mga karamdaman na ito?</h5>
                       <hr>
                     </div>
@@ -366,14 +366,14 @@ Coded by www.creative-tim.com
                   <div class="tab-pane fade" id="travelhistab" role="tabpanel" aria-labelledby="travelhis">
                     <div class="">
                       <div class="">
-                        <div class="alert alert-info"><h3>Travel History</h3></div>
+                        <div class="alert alert-primary text-white"><h3 class="display-3 text-white">Travel History</h3></div>
                         <h5 class="font-italic">Pakisagutan ang mga sumusunod ng tama upang mabigyan ng nararapat na pangangalaga ang mga tunay na nangangailangan.</h5>
                         <hr>
                       </div>
                       <form role="form">
                         <div class="form-group">
                           <div class="custom-control custom-checkbox mb-3">
-                            <input class="custom-control-input" id="outTar" type="checkbox">
+                            <input class="custom-control-input" id="outTar" type="checkbox" checked="false">
                             <label class="custom-control-label" for="outTar">
                               <span><b>Do you have a History of Travel outside Tarlac? </b>/<i> May pagkakataon bang ikaw ay lumabas ng Tarlac?</i></span>
                             </label>
@@ -403,7 +403,14 @@ Coded by www.creative-tim.com
                               <span><b>Mode of Transportation </b>/<i> Sasakyan na ginamit</i></span>
                             </label>
                             <br>
-                            <input id="travel3" class="form-control" placeholder="" type="text">
+                            <div class="custom-control custom-radio mb-3">
+                              <input name="custom-radio-1" class="custom-control-input" id="customRadio1" type="radio">
+                              <label class="custom-control-label" for="customRadio1">Private Vehicle</label>
+                            </div>
+                            <div class="custom-control custom-radio mb-3">
+                              <input name="custom-radio-1" class="custom-control-input" id="customRadio2" checked="" type="radio">
+                              <label class="custom-control-label" for="customRadio2">Public Utility Vehicle (Grab, Jeep, Bus, UV, etc.)</label>
+                            </div>
                             </div>
                             <div class="mb-3"><label>
                               <span><b>Purpose of Transportation </b>/<i> Dahilan ng</i></span>
@@ -425,10 +432,20 @@ Coded by www.creative-tim.com
                   </div>
 
 
-                  <!-- ============================ -->
+                  <!-- ================social============ -->
                   <div class="tab-pane fade" id="socialhistab" role="tabpanel" aria-labelledby="socialhis">
                     <div class="">
-                      
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-md-6 col-xs-12">
+                            <div class="custom-control custom-checkbox mb-3">
+                              <input class="custom-control-input" id="alg" type="checkbox">
+                              <label class="custom-control-label" for="alg">
+                                <span>Allergy</span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
                     </div>
                   </div>
                 </div>
@@ -526,6 +543,9 @@ Coded by www.creative-tim.com
   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> -->
   <script src="assets/js/argon-design-system.min.js?v=1.2.0" type="text/javascript"></script>
   <script>
+
+
+$("#outTar").attr('checked', false);
     var form = $('#travelcond'),
 checkbox = $('#outTar'),
 chShipBlock = $('#travelbar');
