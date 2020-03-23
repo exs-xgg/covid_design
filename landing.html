@@ -33,8 +33,9 @@ Coded by www.creative-tim.com
   <link href="assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link href="assets/css/argon-design-system.css?v=1.2.0" rel="stylesheet" />
-  
+  <link href="https://unpkg.com/bootstrap-datepicker@1.9.0/dist/css/bootstrap-datepicker3.min.css"/>
   <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!-- <script src="https://unpkg.com/bootstrap-datepicker@1.9.0/dist/locales/bootstrap-datepicker.en-GB.min.js"></script> -->
   <script>
     function goTo(e){
         var c = e.split('.')[1] + 'his';
@@ -391,16 +392,24 @@ Coded by www.creative-tim.com
                               <input id="travel1" class="form-control" placeholder="" type="text">
                             </div>
                             <div class="mb-3"><label>
-                                <span><b>Date of Travel </b>/<i> Lugar ng</i></span>
+                                <span><b>Date of Travel </b>/<i> Araw ng</i></span>
                               </label>
                               <br>
-                              <input id="travel2" class="form-control" placeholder="" type="text">
+                              <div class="input-group date" id="datepickah">
+                                <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                              </div>
                             </div>
                             <div class="mb-3"><label>
-                              <span><b>Date of Travel </b>/<i> Lugar ng</i></span>
+                              <span><b>Mode of Transportation </b>/<i> Sasakyan na ginamit</i></span>
                             </label>
                             <br>
-                            <input id="travel2" class="form-control" placeholder="" type="text">
+                            <input id="travel3" class="form-control" placeholder="" type="text">
+                            </div>
+                            <div class="mb-3"><label>
+                              <span><b>Purpose of Transportation </b>/<i> Dahilan ng</i></span>
+                            </label>
+                            <br>
+                            <input id="travel4" class="form-control" placeholder="" type="text">
                             </div>
                           </span>
                           <!-- END WRAPPER -->
@@ -419,35 +428,7 @@ Coded by www.creative-tim.com
                   <!-- ============================ -->
                   <div class="tab-pane fade" id="socialhistab" role="tabpanel" aria-labelledby="socialhis">
                     <div class="">
-                      <form role="form">
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="Social His" type="text">
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-email-83"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="Email" type="email">
-                          </div>
-                        </div>
-                        <div class="form-group focused">
-                          <div class="input-group input-group-alternative">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="Password" type="password">
-                          </div>
-                        </div>
-                        <div class="text-center">
-                          <button type="button" class="btn btn-primary mt-4">Submit</button>
-                        </div>
-                      </form>
+                      
                     </div>
                   </div>
                 </div>
@@ -560,6 +541,12 @@ checkbox.on('click', function() {
       chShipBlock.find('input').attr('required', false);
    }
 });
+
+
+
+$('#datepickah').datepicker({
+  autoclose: true
+    });
   </script>
 </body>
 
